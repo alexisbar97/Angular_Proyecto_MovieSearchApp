@@ -1,0 +1,14 @@
+<form (ngSubmit)="search()">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Search Movies...</mat-label>
+    <input matInput [(ngModel)]="query" name="query" required>
+    <!-- Botón de limpieza -->
+    <button mat-icon-button matSuffix type="button" (click)="clearSearch()" *ngIf="query">
+      <mat-icon>close</mat-icon>
+    </button>
+    <!-- Botón de búsqueda -->
+    <button mat-icon-button matSuffix type="submit">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
