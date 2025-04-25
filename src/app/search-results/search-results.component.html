@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="search-container">
+  <mat-card class="search-card">
+    <mat-card-content>
+      <app-search-bar (clearResults)="clearMovies()"></app-search-bar>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-spinner *ngIf="loading" diameter="50"></mat-spinner>
+
+  <div *ngIf="movies.length === 0 && !loading" class="no-results">
+    <mat-icon>search_off</mat-icon>
+    <p>No se encontraron películas.</p>
+  </div>
+
+  <app-movie-list [movies]="movies" [query]="query"></app-movie-list>
+</div>
